@@ -1,0 +1,875 @@
+/* =========================================================
+   HEALTHWISE SITEMAP GENERATOR
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    margin:0;
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#f4f8f6;
+
+    color:#24352f;
+
+    line-height:1.6;
+
+}
+
+
+button,
+input,
+select,
+textarea{
+
+    font:inherit;
+
+}
+
+
+button{
+
+    cursor:pointer;
+
+}
+
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.sitemap-app{
+
+    width:100%;
+
+    min-height:100vh;
+
+}
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.sitemap-header{
+
+    padding:
+        65px
+        20px
+        75px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0c513d,
+            #16805b
+        );
+
+    color:#fff;
+
+}
+
+
+.sitemap-header > div{
+
+    width:
+        min(
+            100%,
+            1050px
+        );
+
+    margin:auto;
+
+}
+
+
+.sitemap-label{
+
+    display:inline-block;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    opacity:.85;
+
+    margin-bottom:12px;
+
+}
+
+
+.sitemap-header h1{
+
+    margin:0 0 15px;
+
+    font-size:
+        clamp(
+            35px,
+            7vw,
+            58px
+        );
+
+    line-height:1.05;
+
+}
+
+
+.sitemap-header p{
+
+    max-width:700px;
+
+    margin:0;
+
+    font-size:18px;
+
+    opacity:.92;
+
+}
+
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.sitemap-card{
+
+    width:
+        min(
+            calc(100% - 30px),
+            1050px
+        );
+
+    margin:
+        25px
+        auto;
+
+    padding:30px;
+
+    background:#fff;
+
+    border:
+        1px solid
+        #e1eae6;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(
+            18,
+            60,
+            48,
+            .06
+        );
+
+}
+
+
+.sitemap-card h2{
+
+    margin:
+        0 0 8px;
+
+    color:#123c30;
+
+    font-size:24px;
+
+}
+
+
+.sitemap-card p{
+
+    color:#61716b;
+
+    margin:
+        0 0 20px;
+
+}
+
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#193d32;
+
+    font-weight:700;
+
+}
+
+
+input,
+select{
+
+    width:100%;
+
+    padding:
+        14px
+        15px;
+
+    border:
+        1px solid
+        #d5e1dc;
+
+    border-radius:10px;
+
+    background:#fff;
+
+    color:#24352f;
+
+    outline:none;
+
+    transition:
+        border-color .2s,
+        box-shadow .2s;
+
+}
+
+
+input:focus,
+select:focus{
+
+    border-color:#16805b;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            22,
+            128,
+            91,
+            .1
+        );
+
+}
+
+
+small{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#788781;
+
+}
+
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.section-heading{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+    margin-bottom:25px;
+
+}
+
+
+.section-heading p{
+
+    margin:0;
+
+}
+
+
+.page-count{
+
+    flex-shrink:0;
+
+    padding:
+        7px
+        12px;
+
+    background:#eaf6f1;
+
+    color:#116d4d;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+}
+
+
+
+/* =========================================================
+   PAGE LIST
+========================================================= */
+
+.page-list{
+
+    display:grid;
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+}
+
+
+.page-row{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        150px
+        45px;
+
+    gap:10px;
+
+    align-items:center;
+
+}
+
+
+.page-row input{
+
+    min-width:0;
+
+}
+
+
+.remove-page{
+
+    width:45px;
+
+    height:45px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:#fff0ef;
+
+    color:#c63d34;
+
+    font-size:18px;
+
+    font-weight:800;
+
+}
+
+
+.remove-page:hover{
+
+    background:#ffe2df;
+
+}
+
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary-button,
+.download-button,
+.secondary-button,
+.copy-button{
+
+    border:0;
+
+    border-radius:10px;
+
+    padding:
+        14px
+        20px;
+
+    font-weight:800;
+
+    transition:
+        transform .2s,
+        opacity .2s;
+
+}
+
+
+.primary-button:hover,
+.download-button:hover,
+.secondary-button:hover,
+.copy-button:hover{
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.primary-button{
+
+    background:#16805b;
+
+    color:#fff;
+
+}
+
+
+.download-button{
+
+    background:#123c30;
+
+    color:#fff;
+
+}
+
+
+.download-button:disabled{
+
+    opacity:.4;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+
+.secondary-button{
+
+    background:#eaf6f1;
+
+    color:#116d4d;
+
+}
+
+
+
+/* =========================================================
+   SETTINGS
+========================================================= */
+
+.settings-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:20px;
+
+}
+
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.sitemap-actions{
+
+    width:
+        min(
+            calc(100% - 30px),
+            1050px
+        );
+
+    margin:
+        30px
+        auto;
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result-section{
+
+    overflow:hidden;
+
+}
+
+
+.result-heading{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+.result-heading > div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.result-heading h2{
+
+    margin:0;
+
+}
+
+
+.success-icon{
+
+    width:38px;
+
+    height:38px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#e7f7ef;
+
+    color:#16805b;
+
+    font-weight:900;
+
+}
+
+
+.copy-button{
+
+    padding:
+        10px
+        15px;
+
+    background:#eef3f1;
+
+    color:#24473b;
+
+}
+
+
+#sitemapOutput{
+
+    width:100%;
+
+    min-height:430px;
+
+    resize:vertical;
+
+    margin-top:15px;
+
+    padding:18px;
+
+    border:
+        1px solid
+        #d5e1dc;
+
+    border-radius:12px;
+
+    background:#101b17;
+
+    color:#d8f4e8;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+}
+
+
+
+/* =========================================================
+   INSTRUCTIONS
+========================================================= */
+
+.instructions{
+
+    width:
+        min(
+            calc(100% - 30px),
+            1050px
+        );
+
+    margin:
+        45px
+        auto
+        70px;
+
+}
+
+
+.instructions > h2{
+
+    color:#123c30;
+
+    margin-bottom:20px;
+
+}
+
+
+.instruction-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap:18px;
+
+}
+
+
+.instruction-card{
+
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    border:
+        1px solid
+        #e1eae6;
+
+}
+
+
+.instruction-card > strong{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    background:#16805b;
+
+    color:#fff;
+
+}
+
+
+.instruction-card h3{
+
+    color:#123c30;
+
+    margin:
+        18px
+        0
+        5px;
+
+}
+
+
+.instruction-card p{
+
+    margin:0;
+
+    color:#65746e;
+
+}
+
+
+.sitemap-example{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    background:#eaf6f1;
+
+    border-radius:12px;
+
+    color:#285044;
+
+}
+
+
+.sitemap-example code{
+
+    display:block;
+
+    margin-top:8px;
+
+    overflow:auto;
+
+    color:#116d4d;
+
+    font-weight:700;
+
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    background:#123c30;
+
+    color:#fff;
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(
+    max-width:700px
+){
+
+    .sitemap-header{
+
+        padding:
+            45px
+            20px
+            55px;
+
+    }
+
+
+    .sitemap-card{
+
+        padding:22px;
+
+    }
+
+
+    .section-heading{
+
+        flex-direction:column;
+
+    }
+
+
+    .page-row{
+
+        grid-template-columns:
+            1fr
+            45px;
+
+    }
+
+
+    .page-row select{
+
+        display:none;
+
+    }
+
+
+    .settings-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .sitemap-actions{
+
+        flex-direction:column;
+
+    }
+
+
+    .primary-button,
+    .download-button{
+
+        width:100%;
+
+    }
+
+
+    .instruction-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .result-heading{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+
+    .copy-button{
+
+        width:100%;
+
+    }
+
+}
