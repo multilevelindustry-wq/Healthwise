@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="HealthWise XML Sitemap Generator"
+    >
+
+    <title>
+        HealthWise Sitemap Generator
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="sitemap-generator.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <main class="sitemap-app">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="sitemap-header">
+
+            <div>
+
+                <span class="sitemap-label">
+                    HEALTHWISE
+                </span>
+
+                <h1>
+                    Sitemap Generator
+                </h1>
+
+                <p>
+                    Generate an XML sitemap for your HealthWise
+                    website and submit it to search engines.
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             WEBSITE URL
+        ================================================== -->
+
+        <section class="sitemap-card">
+
+            <label for="websiteUrl">
+                Website URL
+            </label>
+
+            <input
+                type="url"
+                id="websiteUrl"
+                placeholder="https://www.yourwebsite.com"
+                autocomplete="url"
+            >
+
+            <small>
+                Enter your main website address without a
+                trailing slash.
+            </small>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAGES
+        ================================================== -->
+
+        <section class="sitemap-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Website Pages
+                    </h2>
+
+                    <p>
+                        Your main HealthWise pages are already
+                        included. Add more pages whenever you
+                        create new articles.
+                    </p>
+
+                </div>
+
+                <span
+                    id="pageCount"
+                    class="page-count"
+                >
+                    0 pages
+                </span>
+
+            </div>
+
+
+            <div
+                id="pageList"
+                class="page-list"
+            ></div>
+
+
+            <button
+                type="button"
+                id="addPageButton"
+                class="secondary-button"
+            >
+                + Add Page
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GENERATION SETTINGS
+        ================================================== -->
+
+        <section class="sitemap-card">
+
+            <h2>
+                Sitemap Settings
+            </h2>
+
+
+            <div class="settings-grid">
+
+
+                <div>
+
+                    <label for="changeFrequency">
+                        Default Change Frequency
+                    </label>
+
+                    <select
+                        id="changeFrequency"
+                    >
+
+                        <option value="weekly">
+                            Weekly
+                        </option>
+
+                        <option value="daily">
+                            Daily
+                        </option>
+
+                        <option value="monthly">
+                            Monthly
+                        </option>
+
+                        <option value="yearly">
+                            Yearly
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label for="priority">
+                        Default Priority
+                    </label>
+
+                    <select
+                        id="priority"
+                    >
+
+                        <option value="1.0">
+                            1.0 — Homepage
+                        </option>
+
+                        <option value="0.8" selected>
+                            0.8 — Important
+                        </option>
+
+                        <option value="0.7">
+                            0.7 — Category
+                        </option>
+
+                        <option value="0.6">
+                            0.6 — Article
+                        </option>
+
+                        <option value="0.5">
+                            0.5 — Normal
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ACTIONS
+        ================================================== -->
+
+        <section class="sitemap-actions">
+
+            <button
+                type="button"
+                id="generateButton"
+                class="primary-button"
+            >
+                Generate Sitemap
+            </button>
+
+
+            <button
+                type="button"
+                id="downloadButton"
+                class="download-button"
+                disabled
+            >
+                Download sitemap.xml
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULT
+        ================================================== -->
+
+        <section
+            id="resultSection"
+            class="sitemap-card result-section"
+            hidden
+        >
+
+            <div class="result-heading">
+
+                <div>
+
+                    <span class="success-icon">
+                        ✓
+                    </span>
+
+                    <h2>
+                        Sitemap Ready
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="copyButton"
+                    class="copy-button"
+                >
+                    Copy XML
+                </button>
+
+            </div>
+
+
+            <p id="resultMessage">
+                Your sitemap has been generated.
+            </p>
+
+
+            <textarea
+                id="sitemapOutput"
+                readonly
+                spellcheck="false"
+            ></textarea>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INSTRUCTIONS
+        ================================================== -->
+
+        <section class="instructions">
+
+            <h2>
+                What to do after generating it
+            </h2>
+
+
+            <div class="instruction-grid">
+
+
+                <div class="instruction-card">
+
+                    <strong>
+                        1
+                    </strong>
+
+                    <h3>
+                        Download
+                    </h3>
+
+                    <p>
+                        Download the generated
+                        <strong>sitemap.xml</strong> file.
+                    </p>
+
+                </div>
+
+
+                <div class="instruction-card">
+
+                    <strong>
+                        2
+                    </strong>
+
+                    <h3>
+                        Upload
+                    </h3>
+
+                    <p>
+                        Upload sitemap.xml to the root of
+                        your HealthWise website.
+                    </p>
+
+                </div>
+
+
+                <div class="instruction-card">
+
+                    <strong>
+                        3
+                    </strong>
+
+                    <h3>
+                        Submit
+                    </h3>
+
+                    <p>
+                        Submit your sitemap through Google
+                        Search Console.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="sitemap-example">
+
+                Your sitemap should eventually be available at:
+
+                <code>
+                    https://yourwebsite.com/sitemap.xml
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer>
+
+            ©
+            <span id="currentYear"></span>
+            HealthWise
+
+        </footer>
+
+
+    </main>
+
+
+    <script src="sitemap-generator.js"></script>
+
+</body>
+
+</html>
